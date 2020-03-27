@@ -1,0 +1,85 @@
+Q1 :
+Define an SQL view Q1(unswid,longname) that gives the distinct room id and name of any room that is Air-conditioned (refers to the facilities.description). The view should return the following details about each room:
+• unswid should be taken from Rooms.unswid field.
+• longname should be taken from Rooms.longname field.
+
+Q2 :
+Define a SQL view Q2(unswid,name) that displays unswid and name of all the distinct staff who taught the student Hemma Margareta. The view should return the following details about each staff:
+• unswid should be taken from People.unswid field.
+• name should be taken from People.name field.
+
+
+Q3 :
+Define a SQL view Q3(unswid,name) that gives all the distinct international students who enrolled in COMP9311 and COMP9024 in the same semester and got HD (Course_enrolments.mark >= 85) in both courses. The view should return the following details about each student:
+• unswid should be taken from People.unswid field.
+• name should be taken from People.name field.
+
+Q4 :
+Define a SQL view Q4(num_student) that gives the number of distinct students who get more HD (Course_enrolments.mark >= 85) than average student. For example, if on average a student gets 3 HDs, we only count students who get more than 3 HDs.
+Note:
+• when calculating the average, only consider students who have at least one not null mark.
+
+
+Q5 :
+Define a SQL view Q5(code,name,semester) that displays the course(s) with the lowest maximum mark in each semester. The view should return the following details about each course:
+• code should be taken from Subjects.code field.
+• name should be taken from Subjects.name field.
+• semester should be taken from Semesters.name field.
+Note:
+• only consider valid courses which have at least 20 not null mark records.
+• if several courses have the same lowest maximum mark in one semester, return all of them.
+• skip the semester with no valid course.
+
+Q6 :
+• Define SQL view Q6(num), which gives the number of distinct local students enrolling in 10S1 in Management stream but never enrolling in any course offered by Faculty of Engineering.
+Note:
+• the student IDs are the UNSW ids (i.e. student numbers) defined in the People.unswid field.
+• Do not count duplicate records.
+
+Q7 :
+Database Systems course admins would like to know the average mark of each semester. Define a SQL view Q7(year, term, average_mark) to help them monitor the average mark each semester. Each tuple in the view should contain the following:
+• the year (Semesters.year) of the semester
+• the term (Semesters.term)
+• the average mark of students enrolled in this course this semester as numeric(4,2)
+Database Systems has value ‘Database Systems’ in the Subjects.name field. Y ou can find the information about all the course offerings for a given subject from Courses. You should calculate the average mark of enrolled students for a course offering from the table Course_enrolments. Note:
+• There are two subjects that share the same name “Database Systems”, and we do not distinguish them in this question. In consequence, you may find more than one course for a single semester. In such case, there is no student enrolling in more than one course.
+• When calculating the average marks, only consider not null mark records.
+• Only consider the semesters which have ‘Database Systems’.
+
+Q8 :
+The head of school would like to know the performance of students in a set of CSE subjects. A subject in this set has two properties: (1) its subject code must start with “COMP93”, and (2) it must be offered in every major semester (i.e., S1 and S2) from 2004 (inclusive) to 2013 (inclusive). The head of school requests a list of students who failed every subject in the set. We say a student fails a subject if he/she had received a not null mark < 50 for at least one course offering of the subject. Define a SQL view Q8(zid, name) for the head of school. Each tuple in the view should contain the following:
+• zid (‘z’ concatenating with People.unswid field)
+• student name (taken from the People.name field)
+Note:
+
+• For a given subject, the number of course offerings that a student can enroll in is at least one. For example, one may fail the course offering of a subject in 03S1, and then re-enroll in another course offering of the same subject in 04S1.
+• Assume there are two subjects in the set, A and B. We only count students who failed both A and B, but not students who failed either A or B.
+
+Q9 :
+Define SQL view Q9(unswid,name)that gives all the distinct students who are satisfied the following conditions in one program:
+• enroll a program in BSc (refer to program_degrees.abbrev)
+• must pass at least one course in the program in semester 2010 S2.
+• average mark >= 80. Average mark means the average mark of all courses a student has
+passed before 2011(exclusive) in the program.
+• the total UOC (refer to subjects.uoc) earned in the program should be no less than the
+required UOC of the program (refer to programs.uoc). A student can only earn the UOC
+of the courses he/she passed.
+The view should return the following details about each student:
+•
+•
+Note:
+• •
+unswid should be taken from People.unswid field. name should be taken from People.name field.
+to pass a course, a student must get at least 50 in that course (Course_enrolments.mark >= 50).
+if a student has enrolled into several different programs, you need to calculate the UOC and average mark separately according to different programs. A course belongs to a program if this student enrolls into course and program in a same semester (refer to semesters.id).
+
+
+Q10 :
+The university is interested in the Lecture Theatre usage status in 2011 S1. So please define SQL view Q10(unswid,longname,num,rank), which gives the distinct room id and name of all the Lecture Theatre with the number of distinct classes that use this theatre and the rank. Theatre rankings are ordered by num from highest to lowest. If there are multiple theatres with the same num, they have the same rank. The view should return the following details about each theatre:
+• unswid should be taken from Rooms.unswid field.
+• longname should be taken from Rooms.longname field.
+• num counts the total number of distinct classes that use this theatre.
+• rank records the rank of the number of distinct classes that use this theatre.
+Note:
+• if there is no class using a theatre, the num would be 0.
+• the ranking is with gaps. i.e., if there are 2 theatres ranked as first, the third theatre will be ranked as third.
