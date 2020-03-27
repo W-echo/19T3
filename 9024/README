@@ -1,4 +1,4 @@
-partA: Calculate PageRanks and out degrees
+partA: pagerank.c          Calculate PageRanks and out degrees
 partB: Inverted Index
 partC: Search Engine and rank pages
 
