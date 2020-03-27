@@ -1,4 +1,4 @@
 partA: pagerank.c          Calculate PageRanks and out degrees
 partB: invertedIndex.c.    Inverted Index
-partC: searchEngine.c      Search Engine and rank pages
+partC: searchPagerank.c      Search Engine and rank pages
 
