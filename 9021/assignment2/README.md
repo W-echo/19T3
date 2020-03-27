@@ -2,6 +2,9 @@
 >>> from maze import *
 >>> maze = Maze('maze_1.txt')
 >>> maze.analyse()
+
+
+
 The maze has 12 gates.
 The maze has 8 sets of walls that are all connected.
 The maze has 2 inaccessible inner points.
