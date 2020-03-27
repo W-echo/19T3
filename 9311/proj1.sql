@@ -105,7 +105,7 @@ as
     select course, max(mark)
     from    course_enrolments
     group by course
-    having count(mark)>20
+    having count(mark)>=20
 ;
 create or replace view q5semin(semes, min_mark)
 as
@@ -245,6 +245,12 @@ as
     where ce.course =q8c.courid and ce.mark<=50
     order by ce.student
 ;
+create or replace view Q8l
+as
+    select q.id
+    from Q8stu q left join people p on (p.id=q.id)
+    where p.name not like 'Eleanor%'
+;
 create or replace view Q8stu(id)
 as
     select a.stuid
@@ -262,18 +268,72 @@ create or replace view Q8(zid, name)
 as
     select distinct'z'||unswid,name
     from people
-    where id in (select * from Q8stu)
+    where id in (select * from Q8l)
 ;
     
 
 -- Q9:
+create or replace view Q9con1(stuid)
+as
+    select p.id
+    from people p, program_degrees pd, program_enrolments pe
+    where pd.abbrev='BCs' and pe.program=pd.program and pe.student = p.id
+;
+
+create or replace view Qcon2(stuid)
+as
+    select 
+    from Q9con1 q1, courses cs, course_enrolments ce, semesters ss
+    where cs.semester=ss.id and ss.year=2010 and ss.term='S2'
+    and cs.id=ce.course and q1.stuid=ce.student
+;
 create or replace view Q9(unswid, name)
 as
---... SQL statements, possibly using other views/functions defined by you ...
+    select p.unswid, p.name 
+    from people p ,Qcon2 q2 
+    where p.id=q2.stuid   
 ;
 
 -- Q10:
+create or replace view Q101(room)
+as
+    select id from rooms
+    where rtype = 2
+;
+create or replace view Q102
+as
+    select cs.id 
+    from courses cs
+    where cs.semester in 
+    (select ss.id from semesters ss where year=2011 and term='S1')
+;
+create or replace view Q103
+as
+    select * 
+    from classes
+    where course in (select * from Q102) and room in (select * from Q101)
+
+;
+create or replace view Q10count(room,num)
+as
+    select room,count(id) 
+    from Q103
+    group by room
+;
+create or replace view Q10rank(room,num)
+as
+    select q1.room, coalesce(qc.num,0)
+    from Q10count qc right join Q101 q1 on (qc.room=q1.room)
+;
+
+create or replace view Q10r(unswid, longname, num)
+as
+    select m.unswid, m.longname,r.num
+    from rooms m, Q10rank r
+    where m.id=r.room
+;
 create or replace view Q10(unswid, longname, num, rank)
 as
---... SQL statements, possibly using other views/functions defined by you ...
+    select r.unswid, r.longname, r.num, rank() over(order by r.num desc) as rank
+    from Q10r r
 ;
