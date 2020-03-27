@@ -1,0 +1,11 @@
+$ dropdb proj1 ... remove any existing DB
+$ createdb proj1 ... create an empty database
+$ psql proj1 -f /home/cs9311/web/19T3/proj/proj1/mymyunsw.dump ... load the MyMyUNSW schema and data
+$ psql proj1 -f /home/cs9311/web/19T3/proj/proj1/check.sql ... load the checking code
+$ psql proj1 -f proj1.sql.  ... load your solution
+$ psql proj1
+proj1=# select check_q1();  ... check your solution to question1
+proj1=# selectcheck_q5();   ... check your solution to question5
+proj1=# select check_all(); ... check all your solutions 
+
+Note: if your database contains any views or functions that are not available in a file somewhere, you should put them into a file before you drop the database.
