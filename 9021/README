@@ -50,5 +50,5 @@ Output:
         3. maze.display ()
           grid -> maze.tex -> maze.pdf (using LaTeX )
 
-https://github.com/W-echo/19T3/raw/master/9021/assignment2/maze_tex_report%20.png
+        ![maze.pdf]https://github.com/W-echo/19T3/raw/master/9021/assignment2/maze_tex_report%20.png
 
