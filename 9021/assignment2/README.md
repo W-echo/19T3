@@ -16,4 +16,4 @@ The maze has a unique entry-exit path with no intersection not to cul-de-sacs. >
 The effect of executing maze.display() is to produce a file named maze_1.tex that can be given as argument to 
 pdflatex to produce a file named maze_1.pdf that views as follows.
 
-![image](maze_tex_report .png)
+![image](https://github.com/W-echo/19T3/blob/master/9021/assignment2/maze_tex_report%20.png)
