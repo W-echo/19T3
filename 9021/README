@@ -49,4 +49,4 @@ Output:
         2. mark these gates, sets of walls that are all connected..., on the maze.
         3. maze.display ()
           grid -> maze.tex -> maze.pdf (using LaTeX )
-<img src="https://github.com/W-echo/19T3/blob/master/9021/assignment2/maze_tex_report%20.png" width="250"> 
+![image](https://github.com/W-echo/19T3/blob/master/9021/assignment2/maze_tex_report%20.png)
