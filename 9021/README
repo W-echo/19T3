@@ -23,3 +23,12 @@ all those lines being aligned vertically in which case the parallelogram
 #         111
 
 
+Quiz 7: 
+
+Input:  Randomly generates a grid of 0s and 1s and determines
+Output: the maximum number of "spikes" in a shape.
+
+Instruction:  A shape is made up of 1s connected horizontally or vertically (it can contain holes).
+              A "spike" in a shape is a 1 that is part of this shape and "sticks out" (has exactly one neighbour in the shape).
+              More specific illustration is recorded in file Quiz7/spike.png
+
