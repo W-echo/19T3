@@ -1,5 +1,5 @@
 
-Quiz 6： 
+# Quiz 6： 
 
 Input:  Randomly fills an array of size 10x10 with 0s and 1s
 Output: the size of the largest parallelogram with horizontal sides.
@@ -23,7 +23,7 @@ all those lines being aligned vertically in which case the parallelogram
            111
 
 
-Quiz 7: 
+# Quiz 7: 
 
 Input:  Randomly generates a grid of 0s and 1s.
 Output: the maximum number of "spikes" in a shape.
@@ -34,7 +34,7 @@ Instruction:  A shape is made up of 1s connected horizontally or vertically (it 
 
 
 
-Assignment2 : 
+# Assignment2 : 
 
 Input:  Randomly generates a grid of 0s,1s,2s,3s, which can be seen as walls of a maze according to some rules.
 
@@ -50,5 +50,5 @@ Output:
         3. maze.display ()
           grid -> maze.tex -> maze.pdf (using LaTeX )
 
-        ![maze.pdf]https://github.com/W-echo/19T3/raw/master/9021/assignment2/maze_tex_report%20.png
+![maze](https://github.com/W-echo/19T3/raw/master/9021/assignment2/maze_tex_report%20.png)
 
