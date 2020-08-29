@@ -50,4 +50,4 @@ Output:
         3. maze.display ()
           grid -> maze.tex -> maze.pdf (using LaTeX )
 
-![image](9021/assignment2/maze_tex_report .png)
+![images](9021/assignment2/maze_tex_report .png)
