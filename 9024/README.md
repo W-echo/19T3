@@ -11,17 +11,17 @@
 
 
 codes in file:
-#partA: pagerank.c                
+# partA: pagerank.c                
       input: collection.txt      recording urls, eg: url12, url23...
       output: pagerankList.txt   one line per url, it includes out degrees (number of out going links) for each url, along with its PageRank value.
                                  eg: url31, 3, 0.2623546
 
-#partB: invertedIndex.c       
+# partB: invertedIndex.c       
       input: collection.txt
       output:invertedIndex.txt   One line per word, words should be alphabetically ordered, using ascending order. Each list of urls (for a single word) should be alphabetically ordered, using ascending order.
                                  eg:    design  url2 url25 url31 url61     
                                         mars  url101 url25 url31     
                                         vegetation  url31 url61
-#partC: searchPagerank.c   
+ # partC: searchPagerank.c   
       input: given search terms (words) as commandline arguments, eg: mars, design
       output: pages with one or more search terms and outputs (to stdout) top 30 pages in descending order of number of search terms found and then within each group, descending order of PageRank.
