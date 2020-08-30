@@ -6,11 +6,13 @@
   This back-end system (Peoplesoft/Oracle) is often called NSS.
   
   Despite its successes, MyUNSW/NSS still has a number of deficiencies, including:
+  
   •  no waiting lists for course or class enrolment
   •  no representation for degree program structures
   •  poor integration with the UNSW Online Handbook
 
   The second point prevents MyUNSW/NSS from being used for three important operations that would be extremely helpful to students in managing their enrolment:
+  
   •  finding out how far they have progressed through their degree program, and what remains to be completed 
   •  checking what are their enrolment options for next semester (e.g. get a list of suggested courses) 
   •  determining when they have completed all of the requirements of their degree program and are eligible to graduate
