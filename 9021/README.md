@@ -1,27 +1,4 @@
 
-# Quiz 6： 
-
-Input:  Randomly fills an array of size 10x10 with 0s and 1s
-Output: the size of the largest parallelogram with horizontal sides.
-
-Instruction: A parallelogram consists of a line with at least 2 consecutive 1s, with below at least one line with the same number of consecutive 1s, 
-all those lines being aligned vertically in which case the parallelogram
-   is actually a rectangle, e.g.
-        111
-        111
-        111
-        111
-   or consecutive lines move to the left by one position, e.g.
-        111
-       111
-      111
-     111
-   or consecutive lines move to the right by one position, e.g.
-        111
-         111
-          111
-           111
-
 
 # Quiz 7: 
 
